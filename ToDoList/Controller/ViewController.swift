@@ -8,15 +8,6 @@
 import UIKit
 import RealmSwift
 
-/*
- - To show list of current to do list items
- - To enter new to do list items
- - To show previously entered to do list item
- 
- - Item
- - Date
- */
-
 class ToDoListItem: Object {
     @objc dynamic var item: String = ""
     @objc dynamic var date: Date = Date()
@@ -76,7 +67,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         vc.completionHandler = { [weak self] in
             self?.refresh()
         }
-        vc.title = "New Item"
+        vc.title = "새로운 할일"
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -86,6 +77,57 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.reloadData()
     }
     
+    // Update Swipe Action
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [self] action, sourceView, completionHandler in
+            
+            realm.beginWrite()
+            realm.delete(self.data[indexPath.row])
+            
+            self.data.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            try! realm.commitWrite()
+            
+            completionHandler(true)
+        }
+        
+        let shareAction = UIContextualAction(style: .normal, title: "Share") { (action, sourceView, completionHandler) in
+            
+            let defaultText = "해야 할 일 : " + self.data[indexPath.row].item
+            let activityController: UIActivityViewController
+            
+            activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
+            
+            self.present(activityController, animated: true, completion: nil)
+            completionHandler(true)
+        }
+        
+        deleteAction.backgroundColor = UIColor(.red)
+        deleteAction.image = UIImage(systemName: "trash")
+        
+        shareAction.backgroundColor = UIColor(.orange)
+        shareAction.image = UIImage(systemName: "square.and.arrow.up")
+        
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
+        
+        return swipeConfiguration
+        
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let checkAction = UIContextualAction(style: .normal, title: "Check-In") { (action, sourceView, completionHandler) in
+            completionHandler(true)
+        }
+        
+        checkAction.backgroundColor = UIColor(.green)
+        checkAction.image = UIImage(systemName: "checkmark")
+        
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [checkAction])
+        
+        return swipeConfiguration
+    }
     
 }
 

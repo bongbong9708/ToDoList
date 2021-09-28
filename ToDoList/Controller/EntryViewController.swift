@@ -23,7 +23,7 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         textField.delegate = self
         datePicker.setDate(Date(), animated: true)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(didTapSaveButton))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .done, target: self, action: #selector(didTapSaveButton))
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

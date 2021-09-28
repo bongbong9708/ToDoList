@@ -78,15 +78,31 @@
 			children = (
 				4D410D332702CA9600904061 /* AppDelegate.swift */,
 				4D410D352702CA9600904061 /* SceneDelegate.swift */,
-				4D410D372702CA9600904061 /* ViewController.swift */,
-				4D410D392702CA9600904061 /* Main.storyboard */,
 				4D410D3C2702CA9800904061 /* Assets.xcassets */,
-				4D410D3E2702CA9800904061 /* LaunchScreen.storyboard */,
 				4D410D412702CA9800904061 /* Info.plist */,
+				4D410D4C270302CB00904061 /* Storyboard */,
+				4D410D4B270302BB00904061 /* Controller */,
+			);
+			path = ToDoList;
+			sourceTree = "<group>";
+		};
+		4D410D4B270302BB00904061 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4D410D372702CA9600904061 /* ViewController.swift */,
 				4D410D472702CB1700904061 /* EntryViewController.swift */,
 				4D410D492702CB2000904061 /* ViewViewController.swift */,
 			);
-			path = ToDoList;
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4D410D4C270302CB00904061 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				4D410D392702CA9600904061 /* Main.storyboard */,
+				4D410D3E2702CA9800904061 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		7E5E5E82BFA9F9A67C33AE74 /* Frameworks */ = {
