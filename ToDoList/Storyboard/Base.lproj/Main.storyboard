@@ -100,34 +100,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziY-Wb-cin">
-                                <rect key="frame" x="20" y="144" width="374" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="Ca7-ly-MXl"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIz-me-5Lr">
-                                <rect key="frame" x="20" y="224" width="374" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="TOC-ni-nMq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FhR-N1-fme">
+                                <rect key="frame" x="20" y="373" width="374" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziY-Wb-cin">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="Ca7-ly-MXl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIz-me-5Lr">
+                                        <rect key="frame" x="0.0" y="80" width="374" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="TOC-ni-nMq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zvG-YD-IaA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ziY-Wb-cin" firstAttribute="leading" secondItem="zvG-YD-IaA" secondAttribute="leading" constant="20" id="4pV-rl-Uo3"/>
-                            <constraint firstItem="tIz-me-5Lr" firstAttribute="leading" secondItem="zvG-YD-IaA" secondAttribute="leading" constant="20" id="NF0-Ur-qkI"/>
-                            <constraint firstItem="tIz-me-5Lr" firstAttribute="top" secondItem="ziY-Wb-cin" secondAttribute="bottom" constant="10" id="Nyu-Wj-5Pw"/>
-                            <constraint firstItem="ziY-Wb-cin" firstAttribute="top" secondItem="zvG-YD-IaA" secondAttribute="top" constant="100" id="gej-hO-VDH"/>
-                            <constraint firstItem="zvG-YD-IaA" firstAttribute="trailing" secondItem="ziY-Wb-cin" secondAttribute="trailing" constant="20" id="iyM-4T-ASn"/>
-                            <constraint firstItem="zvG-YD-IaA" firstAttribute="trailing" secondItem="tIz-me-5Lr" secondAttribute="trailing" constant="20" id="uIs-Rw-88i"/>
+                            <constraint firstItem="zvG-YD-IaA" firstAttribute="trailing" secondItem="FhR-N1-fme" secondAttribute="trailing" constant="20" id="FS9-Hp-LVX"/>
+                            <constraint firstItem="FhR-N1-fme" firstAttribute="centerY" secondItem="fy2-IW-DEq" secondAttribute="centerY" id="FwI-p0-VTp"/>
+                            <constraint firstItem="FhR-N1-fme" firstAttribute="centerX" secondItem="fy2-IW-DEq" secondAttribute="centerX" id="RhL-Na-ctZ"/>
+                            <constraint firstItem="FhR-N1-fme" firstAttribute="leading" secondItem="zvG-YD-IaA" secondAttribute="leading" constant="20" id="qoG-z3-gRZ"/>
                         </constraints>
                     </view>
                     <connections>
